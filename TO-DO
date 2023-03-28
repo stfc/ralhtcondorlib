@@ -1,0 +1,7 @@
+Potential TO DO list:
+
+* Needs to be packaged as RPM (distutils?, setuptools?, ... ?)
+* Raise Exception if Schedd is not reachable.
+* Pass address for remote daemons (Schedd, Collector).
+
+
