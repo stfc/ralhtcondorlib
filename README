@@ -1,0 +1,2 @@
+Wrapper library around the basic HTCondor python binding classes/methods 
+for querying jobs and nodes. 
