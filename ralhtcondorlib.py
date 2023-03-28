@@ -97,9 +97,10 @@ class HTCondorScheddList(list):
         return jobs
         
 
-
-
 class HTCondorCollector(object):
+    """
+    class to represent an HTCondor Collector
+    """
     def __init__(self):
         self.collector = htcondor.Collector()
 
@@ -122,6 +123,9 @@ class HTCondorCollector(object):
 
 
 class HTCondorPool(object):
+    """
+    API for the Batch Farm
+    """
     def __init__(self):
         self.collector = HTCondorCollector()
         self.schedd_l = self.collector.get_schedd_l()
