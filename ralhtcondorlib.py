@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import htcondor
+from ralhtcondorlib.ralhtcondorexceptions import CollectorNotReachable
 
 
 # ============================================================================== 
@@ -103,6 +104,17 @@ class HTCondorCollector(object):
     """
     def __init__(self):
         self.collector = htcondor.Collector()
+        self.__validate_collector()
+
+    def __validate_collector(self):
+        """
+        checks if the collector is reachable
+        """
+        try:
+            # should return an empty list if Collector exists
+            self.collector.query(constraint="False")
+        except Exception:
+            raise CollectorNotReachable()
 
     def get_schedd_l(self):
         """
